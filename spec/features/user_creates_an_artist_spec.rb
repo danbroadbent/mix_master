@@ -52,4 +52,15 @@ RSpec.feature "User submits a new artist" do
     expect(page).to have_content "Green Day"
     expect(page).to have_css('img')
   end
+
+  scenario "User deletes an artist" do
+    artist_1 = Artist.create(name: "Michael Jackson", image_path: "http://cps-static.rovicorp.com/3/JPG_400/MI0003/146/MI0003146038.jpg")
+
+    visit artist_path(artist_1.id)
+
+    click_on "Delete"
+
+    expect(page).to have_content "All Artists"
+    expect(page).to_not have_content "Michael Jackson"
+  end
 end
