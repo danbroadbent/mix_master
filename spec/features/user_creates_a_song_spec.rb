@@ -21,4 +21,16 @@ RSpec.feature "User creates a song" do
     click_on "Create Song"
     expect(page).to have_content "Title can't be blank"
   end
+
+  # scenario "can edit a song" do
+  #   artist = create(:artist)
+  #   song = create(:song)
+  #
+  #   visit song_path(song)
+  #   click_on "Edit"
+  #   fill_in "song_title", with: song.title
+  #   click_on "Update Song"
+  #   expect(page).to have_content "#{song.title}"
+  #   expect(page).to have_link 'Artist', href: 'artist_path(artist)'
+  # end
 end
